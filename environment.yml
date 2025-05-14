@@ -1,0 +1,12 @@
+name: subscript
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - fastapi==0.104.1
+    - uvicorn==0.24.0
+    - youtube-transcript-api==0.6.1
+    - pydantic==2.4.2 

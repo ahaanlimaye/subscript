@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SubScript Translation</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+    .subscript-panel {
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .subscript-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+      background-color: #f8f8f8;
+    }
+    .subscript-header h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .subscript-header button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+    }
+    .subscript-content {
+      padding: 16px;
+    }
+    .subscript-original {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+    .subscript-romanized {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #555;
+      font-style: italic;
+    }
+    .subscript-literal {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #555;
+      border-left: 3px solid #2196F3;
+      padding-left: 12px;
+    }
+    .subscript-natural {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: #555;
+      border-left: 3px solid #4CAF50;
+      padding-left: 12px;
+    }
+    .subscript-word-by-word {
+      font-size: 15px;
+      color: #333;
+      background: #f5f5f5;
+      padding: 12px;
+      border-radius: 4px;
+      line-height: 1.6;
+    }
+    .hindi-word {
+      display: inline-block;
+      margin-right: 6px;
+      position: relative;
+      cursor: pointer;
+    }
+    .hindi-word .english-translation {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      white-space: nowrap;
+      display: none;
+      z-index: 1;
+    }
+    .hindi-word:hover .english-translation {
+      display: block;
+    }
+    .subscript-footer {
+      padding: 12px 16px;
+      text-align: right;
+      border-top: 1px solid #eee;
+    }
+    .subscript-footer button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222;
+      }
+      .subscript-panel {
+        background-color: #222;
+        color: #eee;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+      .subscript-header {
+        background-color: #333;
+        border-bottom: 1px solid #444;
+      }
+      .subscript-header h2 {
+        color: #eee;
+      }
+      .subscript-header button {
+        color: #aaa;
+      }
+      .subscript-original {
+        color: #eee;
+      }
+      .subscript-romanized,
+      .subscript-literal,
+      .subscript-natural {
+        color: #ccc;
+      }
+      .subscript-word-by-word {
+        background: #333;
+        color: #eee;
+      }
+      .subscript-footer {
+        border-top: 1px solid #444;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="subscript-panel">
+    <div class="subscript-header">
+      <h2>SubScript</h2>
+      <button id="subscript-close">×</button>
+    </div>
+    <div class="subscript-content">
+      <div class="subscript-original">हिंदी पाठ यहां दिखाई देगा</div>
+      <div class="subscript-romanized">Hindi paath yahaan dikhayi dega</div>
+      <div class="subscript-literal">Hindi text will be shown here</div>
+      <div class="subscript-natural">Hindi text will be displayed here</div>
+      <div class="subscript-word-by-word">
+        <span class="hindi-word">हिंदी
+          <span class="english-translation">Hindi</span>
+        </span>
+        <span class="hindi-word">पाठ
+          <span class="english-translation">text</span>
+        </span>
+        <span class="hindi-word">यहां
+          <span class="english-translation">here</span>
+        </span>
+      </div>
+    </div>
+    <div class="subscript-footer">
+      <button id="subscript-continue">Continue</button>
+    </div>
+  </div>
+  
+  <script>
+    // This is just a template HTML file.
+    // Actual functionality is handled by the content script.
+  </script>
+</body>
+</html> 

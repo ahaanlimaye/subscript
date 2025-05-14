@@ -1,0 +1,1 @@
+This is a plain text file that can be added to the Git repository to make sure the 'images' directory is tracked.

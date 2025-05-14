@@ -1,0 +1,147 @@
+/* SubScript Styles */
+
+/* Ensure our elements stay on top of YouTube interface */
+#subscript-panel {
+  z-index: 9999999 !important;
+}
+
+/* Word highlighting for translations */
+.subscript-highlight {
+  background-color: rgba(255, 255, 0, 0.3);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Button hover effects */
+.subscript-footer button:hover {
+  background-color: #0b7dda;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Enhanced Hindi word hover effect */
+.hindi-word {
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+.hindi-word .english-translation {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hindi-word .english-translation:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-style: solid;
+  border-color: #333 transparent transparent;
+}
+
+.hindi-word:hover .english-translation {
+  display: block;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  #subscript-panel {
+    width: 95%;
+    bottom: 60px;
+  }
+  .subscript-content {
+    padding: 10px;
+  }
+  .subscript-original {
+    font-size: 16px;
+  }
+  .subscript-romanized,
+  .subscript-literal, 
+  .subscript-natural {
+    font-size: 14px;
+  }
+  .subscript-word-by-word {
+    font-size: 13px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  #subscript-panel {
+    background-color: #222;
+    color: #eee;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .subscript-header {
+    border-bottom: 1px solid #444;
+  }
+  .subscript-header h2 {
+    color: #eee;
+  }
+  .subscript-header button {
+    color: #aaa;
+  }
+  .subscript-original {
+    color: #eee;
+  }
+  .subscript-romanized,
+  .subscript-literal, 
+  .subscript-natural {
+    color: #ccc;
+  }
+  .subscript-word-by-word {
+    background: #333;
+    color: #eee;
+  }
+  .subscript-footer {
+    border-top: 1px solid #444;
+  }
+  
+  /* Dark mode for hover translations */
+  .hindi-word .english-translation {
+    background-color: #555;
+  }
+  .hindi-word .english-translation:after {
+    border-color: #555 transparent transparent;
+  }
+}
+
+/* Loading indicator */
+.subscript-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  border-top-color: #2196F3;
+  animation: subscript-spin 1s ease infinite;
+}
+
+@keyframes subscript-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark mode for loading indicator */
+@media (prefers-color-scheme: dark) {
+  .subscript-loading {
+    border: 2px solid rgba(255,255,255,0.1);
+    border-top-color: #2196F3;
+  }
+} 

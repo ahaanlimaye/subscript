@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SubScript</title>
+  <style>
+    .container { font-family: Arial, sans-serif; width: 320px; padding: 20px; }
+    h1 { font-size: 1.5em; margin-bottom: 0.2em; }
+    .setting { margin: 1em 0; }
+    label { display: block; margin-bottom: 0.2em; }
+    input[type="number"] { width: 60px; }
+    button { margin-top: 1em; width: 100%; padding: 10px; font-size: 1em; background: #1976d2; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #1565c0; }
+    .switch { display: flex; align-items: center; margin-bottom: 1em; }
+    .slider { margin-right: 0.5em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SubScript</h1>
+    <p>Learn Hindi through YouTube videos with real-time captions</p>
+    <label class="switch">
+      <input type="checkbox" id="enableSubScript">
+      <span class="slider round"></span>
+      Enable SubScript
+    </label>
+    <div class="setting">
+      <label for="pauseInterval">Pause after how many sentences:</label>
+      <input type="number" id="pauseInterval" min="1" value="3">
+    </div>
+    <button id="saveSettings">Save Settings</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 
