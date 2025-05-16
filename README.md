@@ -1,33 +1,33 @@
 # SubScript
 
-A Chrome extension for learning Hindi through YouTube videos with real-time translations.
+SubScript is a Chrome extension that transforms YouTube into an interactive language learning tool. It provides real-time AI-powered translations, explanations, and chat for any language with captions—right on top of your video.
 
-## Features
+## Features (MVP)
 
-- Automatically detects when Hindi is being spoken in YouTube videos
-- Pauses video after a configurable number of sentences
-- Provides both word-by-word literal translations and natural English translations
-- Integrates with OpenAI's API for high-quality translations
-- Works with YouTube's auto-generated captions
+- **Works on any YouTube video with captions**
+- **Pauses video after a configurable number of sentences**
+- **AI-powered translation and explanation overlay**
+- **Interactive chat:** Ask follow-up questions, get grammar breakdowns, or request examples—just like ChatGPT
+- **Conversation caching:** Each video chunk's chat is saved and restored if you revisit it
+- **"Refresh Chat" button:** Start a new conversation for any chunk at any time
+- **Markdown-formatted, readable AI responses**
+- **Draggable, resizable, and persistent overlay**
+- **Robust caption fetching with retry and reload logic**
+- **Settings and OpenAI API key stored securely in Chrome storage**
 
 ## How It Works
 
-1. Turn on the extension while watching a Hindi YouTube video with captions enabled
-2. SubScript watches for new captions and counts sentences
-3. After your configured number of sentences, the video automatically pauses
-4. A translation panel appears showing:
-   - The original Hindi text
-   - A word-by-word literal translation (great for learning vocabulary and structure)
-   - A natural English translation (for understanding meaning)
-5. Click "Continue" to resume the video
+1. Enable SubScript and enter your OpenAI API key in the extension popup
+2. Play any YouTube video with captions enabled
+3. SubScript monitors captions and pauses the video after your chosen number of sentences
+4. An overlay appears with:
+   - The original text
+   - Romanized version (if applicable)
+   - English translation
+5. Chat with the AI: ask questions, get explanations, or continue the conversation
+6. Click "Continue" to resume the video, or "Refresh Chat" to start over for that chunk
 
 ## Installation
-
-### From Chrome Web Store (Coming Soon)
-
-1. Visit the Chrome Web Store page for SubScript
-2. Click "Add to Chrome"
-3. Follow the installation prompts
 
 ### Manual Installation (Developer Mode)
 
@@ -44,21 +44,23 @@ A Chrome extension for learning Hindi through YouTube videos with real-time tran
 3. Configure how many sentences to wait before pausing
 4. Toggle the extension on/off
 
-## Future Plans
+## Known Limitations (MVP)
 
-- Support for additional languages
-- Vocabulary saving feature
-- Pronunciation guidance
-- Custom API integration options
-- Mobile version
+- Requires your own OpenAI API key (not provided)
+- Only works on YouTube videos with captions
+- Caching is per session and per chunk; clearing browser storage will remove chat history
+- Only tested on desktop Chrome
+- No vocabulary saving or pronunciation features (yet)
 
-## Privacy
+## Privacy & Data
 
-Your API key is stored locally in your browser and is never sent to any server other than OpenAI for translation purposes.
+- Your OpenAI API key and settings are stored locally in your browser using Chrome's storage APIs
+- No data is sent anywhere except directly to OpenAI for translation/chat
+- No tracking or analytics
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+Contributions, bug reports, and feature requests are welcome! Please open an issue or submit a pull request.
 
 ## License
 

@@ -42,7 +42,9 @@ chrome.runtime.onInstalled.addListener((details) => {
     // Set default settings on install
     chrome.storage.sync.set({
       enabled: false,
-      pauseInterval: 3
+      pauseInterval: 3,
+      openaiApiKey: '',
+      theme: 'light'
     });
   }
 }); 
